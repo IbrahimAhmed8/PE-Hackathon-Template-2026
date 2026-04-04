@@ -26,11 +26,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
     - name: Install uv
-      run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      uses: astral-sh/setup-uv@v5
+      with:
+        enable-cache: true
+        
     - name: Set up Python
-      run: ~/.cargo/bin/uv python install 3.12
+      run: uv python install 3.12
+      
     - name: Install dependencies
-      run: ~/.cargo/bin/uv sync
+      run: uv sync
+      
     - name: Run Tests
-      run: ~/.cargo/bin/uv run pytest --cov=app --cov-fail-under=70
+      run: uv run pytest --cov=app --cov-fail-under=70
