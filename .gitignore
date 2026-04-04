@@ -1,4 +1,4 @@
-# Python
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -7,28 +7,28 @@ __pycache__/
 dist/
 build/
 
-# Virtual environment
+
 .venv/
 
-# Environment variables
+
 .env
 
-# uv
+
 uv.lock
 
-# IDE
+
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# pytest
+
 .pytest_cache/
 
-# OS
+
 .DS_Store
 Thumbs.db
 
-# Judging (not visible to participants)
+
 judging/

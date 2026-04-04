@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 from flask import Flask, jsonify
 from app.database import init_db
 from app.routes import register_routes
+from app.security import check_malicious_payloads
 
 def create_app():
     load_dotenv()
@@ -9,6 +10,8 @@ def create_app():
     init_db(app)
     from app import models  # noqa: F401
     register_routes(app)
+
+    app.before_request(check_malicious_payloads)
 
     @app.route("/health")
     def health():
