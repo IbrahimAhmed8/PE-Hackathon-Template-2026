@@ -12,7 +12,7 @@ An enterprise-ready URL Shortener built with Flask, Peewee, PostgreSQL, and an A
 ## Setup & Run
 1. Clone the repo: `git clone <url>`
 2. Start services: `sudo docker compose up -d --build`
-3. Seed Database: `sudo docker compose exec web uv run python init_db.py`
+3. Seed Database: `sudo docker compose exec web uv run python init_db.py` 
 
 ## API Endpoints
 * `GET /health`: Returns 200 OK for load balancers.
